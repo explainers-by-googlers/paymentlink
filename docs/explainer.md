@@ -1,6 +1,9 @@
 # Support for Payment link type in HTML
-Last Update: August 10, 2023
+Last Update: August 24, 2023
 
+## Authors:
+- Aneesh Ali Nainamvalappil Cheriyakath
+- Stephen McGruer
 
 ## Terminology
 ### Push payment - Payment is initiated by the payer (consumer).
