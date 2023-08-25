@@ -66,6 +66,8 @@ The merchant or payment processor can embed this link in the relevant payment pa
 ![Payment sequence](./images/payment-link-sequence.png)
 
 ### Example "payment" links
+The examples listed below are only meant to illustrate the usage of payment links, with the help of some commonly know payment methods. The URI specification for various payment methods is out of scope of this proposal.
+
 #### UPI - Instant payment system based in India
 - [Specification](https://www.labnol.org/files/linking.pdf) published by [NPCI](https://www.npci.org.in/).
 - Href URI syntax
