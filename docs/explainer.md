@@ -66,26 +66,26 @@ The merchant or payment processor can embed this link in the relevant payment pa
 ![Payment sequence](./images/payment-link-sequence.png)
 
 ### Example "payment" links
+#### UPI - Instant payment system based in India
+- [Specification](https://www.labnol.org/files/linking.pdf) published by [NPCI](https://www.npci.org.in/).
+- Href URI syntax
+  - ```upi://pay?param-name=param-value&param-name=param-value&...```
+- Example
+  - ```<link rel=”payment” href=”upi://pay?pa=merchant3@icici&pn=test&am=123&cu=INR”>```
+
+As seen above, the *rel="payment"* attribute indicates that this is a payment link. The scheme, *upi*, along with the host, *pay*, indicates that the payment method is UPI.
+
 #### Bitcoin
-- [Specification](https://en.bitcoin.it/wiki/BIP_0021)
+- [Specification](https://en.bitcoin.it/wiki/BIP_0021).
 - Href URI syntax
   - ```bitcoin:<payee-address>[?amount=<amount>][?label=<label>][?message=<message>]```
 - Example
-  - ```<link rel=”payment” uri=”bitcoin:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W?amount=20.3&label=Walmart”>```
-
-As seen above, the *rel="payment"* attribute indicates that this is a payment link. The scheme of the URI, *bitcoin*, indicates the payment method is bitcoin.
-
-#### PIX - Brazilian payment method owned and managed by Brazilian Central Bank
-- Href URI syntax
-  - ```pix:[?type=<static|dynamic>][?code=<PIX code in TLV format>]```
-  - Example
-    - ```<link rel=”payment” href=”pix:type=static&code=00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913John Doe6008BRASILIA62070503***63041D3D”>```
+  - ```<link rel=”payment” href=”bitcoin:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W?amount=20.3&label=Walmart”>```
 
 #### eWallets
-  - Href URI syntax
-    - ```<eWalletlId>:<payee-address|session-token>[?currency=<currency>][?amount=<amount>][?payee-name=<payee-name>][?message=<message>]```
+  - eWallets can either define their own schemes or leverage their existing deeplinking URIs that are based on https.
   - Example
-    - ```<link rel=”payment” href=”kakaopay:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W?currency=USD&amount=20.3&payee-name=Walmart”>```
+    - ```<link rel=”payment” href=”https://paypal.com?paye-address=175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W&currency=USD&amount=20.3&payee-name=Walmart”>```
 
 ## Privacy considerations
 A malicious payment client could use the existence of payment links to track the user. This is an existing concern with e.g., extension based apps (which often ask for permission to view all webpages the user visits), but should be considered for this proposal too.
