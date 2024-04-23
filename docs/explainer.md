@@ -86,9 +86,9 @@ As seen above, the *rel="payment"* attribute indicates that this is a payment li
   - ```<link rel=”payment” href=”bitcoin:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W?amount=20.3&label=Walmart”>```
 
 #### eWallets
-  - eWallets can either define their own schemes or leverage their existing deeplinking URIs that are based on https.
+  - eWallets can define proprietary schemes that can only be processed by them.
   - Example
-    - ```<link rel=”payment” href=”https://paypal.com?payee-address=175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W&currency=USD&amount=20.3&payee-name=Walmart”>```
+    - ```<link rel=”payment” href=”paypal://paypal.com?payee-address=175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W&currency=USD&amount=20.3&payee-name=Walmart”>```
 
 ## Privacy considerations
 A malicious payment client could use the existence of payment links to track the user. This is an existing concern with e.g., extension based apps (which often ask for permission to view all webpages the user visits), but should be considered for this proposal too.
