@@ -50,7 +50,7 @@ We believe there is benefit a 'passive' method to allow browsers to detect push 
 ## Proposed solution - "payment" link relationship
 The "payment" link is expected to follow the standard specifications of a [Link](https://www.w3.org/TR/html401/types.html#h-6.12) type with the *rel* attribute set to "payment".
 ```html
-<link rel=”payment” href="Any URI, where the URI scheme determines the payment method type">
+<link rel=”payment” href="Any URL, where the URL scheme determines the payment method type">
 ```
 The merchant or payment processor can embed this link in the relevant payment pages, hence allowing the browser to optimize the payment experience whenever possible. The browser is responsible for detecting the presence of a "payment" link in any page. It then notifies the payment clients that have registered the associated *scheme* for receiving "payment" links. Some basic validations of the URI might be supported but it is the merchant's responsibility to ensure that the URI conforms to the specification associated with the *scheme*.
 
